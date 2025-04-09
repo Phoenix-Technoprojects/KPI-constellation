@@ -23,10 +23,21 @@ const svg = select("#kpi-constellation")
 
 const container = svg.append("g");
 
+// Set up the zoom behavior
+const initialZoomScale = 1; // Set this to any zoom level you want as the default (1 = 100%, 0.5 = 50%, etc.)
+
 svg.call(
-  zoom().scaleExtent([0.5, 3]).on("zoom", (event) => {
-    container.attr("transform", event.transform);
-  })
+  zoom()
+    .scaleExtent([0.5, 3]) // Minimum and maximum zoom levels
+    .on("zoom", (event) => {
+      container.attr("transform", event.transform);
+    })
+);
+
+// Apply initial zoom scale after the SVG is drawn
+svg.transition().duration(1000).call(
+  zoom().transform,
+  d3.zoomIdentity.translate(width / 2, height / 2).scale(initialZoomScale)
 );
 
 const tooltip = createTooltip();
