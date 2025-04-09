@@ -185,14 +185,14 @@ fetch("./data/kpis.json")
     }
 
     // Mode switch handler
-    window.setConstellationMode = (mode) => {
+    /*window.setConstellationMode = (mode) => {
       if (["calm", "storm"].includes(mode)) {
         currentMode = mode === "calm" ? "cosmic" : "storm";
       }
-    }
+    }*/
 
     // Enhanced UI buttons to switch modes
-    const modeToggle = document.createElement("div");
+    /*const modeToggle = document.createElement("div");
     modeToggle.innerHTML = `
       <div style="
         position: fixed;
@@ -224,13 +224,13 @@ fetch("./data/kpis.json")
           cursor: pointer;
         ">Quantum Storm</button>
       </div>
-    `;
-    document.body.appendChild(modeToggle);
+    `;*/
+    //document.body.appendChild(modeToggle);
 	
 	// Expose stop function to window for full cleanup
-	window.stopConstellationSimulation = () => {
+	/**window.stopConstellationSimulation = () => {
 		simulation.stop();
 		svg.selectAll("*").remove();
 		if (modeToggle) modeToggle.remove();
-		};
+		};*/
  });
