@@ -24,7 +24,7 @@ const svg = select("#kpi-constellation")
 const container = svg.append("g");
 
 // Set up the zoom behavior
-const initialZoomScale = 0.75; // Set this to any zoom level you want as the default (1 = 100%, 0.5 = 50%, etc.)
+const initialZoomScale = 1; // Set this to any zoom level you want as the default (1 = 100%, 0.5 = 50%, etc.)
 
 svg.call(
   zoom()
