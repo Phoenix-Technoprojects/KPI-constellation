@@ -85,7 +85,7 @@ fetch("./data/kpis.json")
     }
 
     const dynamicCharge = () =>
-      forceManyBody().strength(d => -100 - 10 * Math.sin(Date.now() / 4000 + d.index));
+      forceManyBody().strength(d => -40 - 10 * Math.sin(Date.now() / 4000 + d.index));
 
     const simulation = forceSimulation(nodes)
       .force("link", forceLink(links).id(d => d.id).distance(130).strength(0.07))
